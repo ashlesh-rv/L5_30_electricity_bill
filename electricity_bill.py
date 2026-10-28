@@ -72,9 +72,7 @@ def average_bill(bills):
     """Calculate the average amount of the supplied bills."""
     if not bills:
         return 0
-    return round(
-        sum(bill["amount"] for bill in bills) / len(bills), 2
-    )
+    return round(sum(bill["amount"] for bill in bills) / len(bills), 2)
 
 
 def save_bills(bills, file_name="bills.json"):
@@ -91,7 +89,6 @@ def sync_meter(meter_ip):
     try:
         connection.request("GET", "/reading")
         response = connection.getresponse()
-        response.raise_for_status = None
 
         if response.status != 200:
             raise OSError(f"Meter returned HTTP status {response.status}")

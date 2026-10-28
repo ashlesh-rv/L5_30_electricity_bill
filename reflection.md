@@ -1,4 +1,3 @@
-
 # Lab 5: Static Code Analysis — Reflection
 
 ## 1. What is static code analysis?
@@ -7,11 +6,11 @@ Static code analysis examines source code without executing it to identify poten
 
 ## 2. What did Pylint, Bandit and Flake8 help identify?
 
-Pylint identified code quality issues such as missing docstrings, naming conventions, mutable default arguments and unused arguments. Bandit identified security risks related to XML parsing, a hardcoded password and shell command execution. Flake8 identified formatting and whitespace problems.
+Pylint identified code quality issues such as missing docstrings, naming conventions, mutable default arguments and unused arguments. Bandit identified security risks related to unsafe XML parsing (B314), the XML parser import (B405), a hardcoded password (B105) and shell command execution (B605). Flake8 identified formatting, whitespace and line-length problems.
 
 ## 3. How did fixing the issues improve the program?
 
-The fixes improved readability, maintainability and security. The code now uses clearer function names, safer handling of default arguments, a hardened XML parser and a safer HTTP connection instead of shell command execution. The program continued to calculate and display the electricity bills correctly.
+The fixes improved readability, maintainability and security. The code now uses clearer function names, safer handling of default arguments, a hardened XML parser and an HTTP connection instead of shell command execution. The program continued to calculate and display the electricity bills correctly. Rerunning the tools verified that the reported issues had been addressed.
 
 ## 4. What did you learn from this lab?
 
